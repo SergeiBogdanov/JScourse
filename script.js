@@ -1,17 +1,10 @@
-/*let user = {
-  name: "John",
-  age: 30
-};
-
-user.surname = "Smith";
-
-alert(user.name + ' ' + user.surname);
-
-user.name = "Pete";
-
-alert(user.name + ' ' + user.surname);
-
-delete user.name;
-
-alert(user.name + ' ' + user.surname);*/
-
+const myArray2 = [1, "Bogdan", true, 4, 5];
+const myArray = myArray2;
+console.log(myArray);
+console.log(myArray2);
+myArray2[3] = "Pesho";
+console.log(myArray);
+console.log(myArray2);
+myArray[6] = "Gosho";
+console.log(myArray);
+console.log(myArray2);

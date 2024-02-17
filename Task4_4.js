@@ -1,30 +1,22 @@
 /*
 Exercise:
-The tank is driving along a road that may have anti-tank mines on it. 
-The road should be represented as a roadMines array of 10 boolean elements. 
-If the element is true, then it is a mine. The movement of the tank should be represented as a cycle, 
-in which one iteration is the movement of the tank to the next section of the road 
-(the next element of the array). When moving, display the message “the tank has moved to ${position}” 
-in the console, where position is the cell number + 1. If the tank hits a mine, 
-then you need to display the message “the tank is damaged,” if this is the 1st explosion, 
-and “the tank is destroyed "if this is the 2nd explosion. After the 2nd explosion, 
-the tank is considered destroyed and stops moving.
+Generate an array of numbers 1–31 inclusive (days of the month). 
+Use console.log to output the string ${day} of January, ${day of the week} for each number. 
+The day of the week, January 1, must be specified using a variable, that is, 
+the program must work correctly for any day of the week on which the month begins. 
+Hint 1: For the days of the week, you can create an array with the names of the days 
+so that you can access it by index. Hint 2: The index of the day of the week 
+can be calculated using the remainder operation.
 */
 
-let roadMines = [false, false, false, false, true, false, false, false, true, false];
-let mine = 0;
+let day = [];
+let dayWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+let i = 1;
+let j = 0;
 
-for (let i = 0; i < roadMines.length; i++) {
-    let position = i + 1;
-    console.log(`the tank has moved to ${position}`);
-
-    if (roadMines[i] && mine >= 1) {
-        console.log('the tank is destroyed');
-        break;
-    }
-
-    if (roadMines[i] && mine < 1) {
-        console.log('the tank is damaged');
-        mine++;
-    }
+while ( i  < 32 ) {
+    day.push(i);
+    console.log(`January ${day[i - 1]}, ${dayWeek[j]}`);
+    i++;
+    j = (j + 1) % 7;
 }

@@ -24,7 +24,7 @@ let blacklistedEmails = [
     'user8@example.com'
 ];
 
-function checkIncludes(emails, blacklist) {
+function filterValidEmails(emails, blacklist) {
     let validEmails = [];
     for (let i = 0; i < emails.length; i++) {
         if (blacklist.includes(emails[i])) {

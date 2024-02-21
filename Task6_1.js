@@ -7,23 +7,30 @@ The array, property name, and desired value must be passed as arguments.
 let objects = [
     { name: 'Василий', surname: 'Васильев' },
     { name: 'Иван', surname: 'Иванов' },
-    { name: 'Пётр', surname: 'Петров' }
+    { name: 'Пётр', surname: 'Петров' },
+    { name: 'Пётр', surname: 'Иванов' },
+    { name: 'Иван', surname: 'Петров' },
+    { name: 'Пётр', surname: 'Петров' },
+    { name: 'Пётр', surname: 'Васильев' },
+    { name: 'Василий', surname: 'Петров' },
+    { name: 'Василий', surname: 'Васильев' },
+    { name: 'Василий', surname: 'Васильев' },
+    { name: 'Иван', surname: 'Иванов' },
     ]
     
-    // fn - функция, которую нужно написать (хорошее название тоже нужно придумать)
-    let result = fn(objects, 'name', 'Иван') {
+    function filtrObjects(objects, name = 'Иван', surname = 'Иванов') {
+        let filtredObject = [];
 
+        for (let i = 0; i < objects.length; i++) {
+            let object = objects[i];
+            if (object.name === name && object.surname === surname) {
+                 filtredObject.push(object);
+            }
+        }
+
+        return filtredObject;
     };
     
-    console.log(result)
-    
-    /*
-    Результат выполнения должен быть:
-
-    [
-    { name: 'Иван', surname: 'Иванов' }
-    ]
-
-    Не забывайте о том, что массивы и объекты передаются по ссылке. 
-    Поэтому для формирования массива-результата нужно создать новый отдельный массив, 
-    а не изменять старый, который пришёл в качестве параметра.*/
+    let result = filtrObjects(objects, 'Василий', 'Васильев');
+    console.log(result);
+    console.log(objects);

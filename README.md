@@ -1,4 +1,6 @@
 ### JavaScript Course </br>
+#### 1. HTML tags
+#### 2. CSS selectors
 #### 3. Data types and conditions
 #### 4. Arrays and loops
 #### 5. Functions

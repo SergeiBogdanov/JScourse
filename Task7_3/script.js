@@ -10,25 +10,26 @@ the timer should work correctly if the user starts it again while it is running.
 document.addEventListener('DOMContentLoaded', function() {
     let numberInput = document.querySelector('.number-input');
     let runTimerButton = document.querySelector('.run-timer-button');
+    let defaultButton = document.querySelector('.default-button');
     let timer = document.querySelector('.timer');
+    let intervalID;
 
-    setInterval(func, delay)
-
-    const intervalID = setInterval(clickButton, 1000);
-
-        function clickButton() {
+    runTimerButton.addEventListener('click', function() {
+        clearInterval(intervalID);
         timer.textContent = numberInput.value;
-        timer.textContent -= 1;
-    }
-
-    numberInput.addEventListener('input', clickButton);
-
-    paintBlock();
-
-    clearButton.addEventListener('click', function() {
-        timer.textContent = numberInput.value;
-
-        colorBlock.style.removeProperty('background-color');
-        colorInput.value = '';
+        intervalID = setInterval(updateTimer, 1000);
     });
+
+    defaultButton.addEventListener('click', function() {
+        numberInput.value = "60";
+    })
+
+    function updateTimer() {
+        let currentValue = parseInt(timer.textContent);
+        if (currentValue > 0) {
+            timer.textContent = currentValue - 1;
+        } else {
+            clearInterval(intervalID);
+        }
+    }
 });

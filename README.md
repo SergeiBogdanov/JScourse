@@ -6,7 +6,6 @@
 #### 5. Functions
 #### 6. Objects
 #### 7. Introduction to DOM
-#### 8. TODO App
-#### 9. Scopes, closures, arrow functions
-#### 10. Data Conversions
-#### 11. Сlient-server
+#### 8. Scopes, closures, arrow functions
+#### 9. Data Conversions
+#### 10. Сlient-server
